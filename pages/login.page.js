@@ -1,4 +1,5 @@
-const elementUtil = require("../Util/elementUtil")
+const elementUtil = require("../Util/elementUtil");
+const constants = require("../constants")
 
 class LoginPage{
 
@@ -11,7 +12,7 @@ class LoginPage{
 
     //**  page actions
     getPageTitle(){
-        return elementUtil.doGetPageTitle()
+        return elementUtil.doGetPageTitle(constants.LOGIN_PAGE_TITLE)
     }
 
     
@@ -19,6 +20,11 @@ class LoginPage{
         return elementUtil.doIsDisplayed(this.signUpLink)
     }
 
-}
 
-module.exports = new loginBtn()
+    doLogin(emailID, pwd){
+        elementUtil.doSetValue(this.username, emailID)
+        elementUtil.doSetValue(this.password, pwd)
+        elementUtil.doClick(this.loginBtn)
+    }
+}
+module.exports = new LoginPage()

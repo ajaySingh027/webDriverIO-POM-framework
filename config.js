@@ -1,6 +1,6 @@
 module.exports = {
 
-    username: 'ajayJS@gmail.com',
+    username: 'ajay_test@gmail.com',
     password: 'Test@1234'
 
 }
